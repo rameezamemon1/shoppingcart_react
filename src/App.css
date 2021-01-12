@@ -1,38 +1,239 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Courgette&family=Liu+Jian+Mao+Cao&family=Lobster&family=Potta+One&display=swap");
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html {
+  min-height: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  background: linear-gradient(-90deg, rgb(253, 206, 206), rgb(192, 164, 164));
+  height: 100vh;
 }
 
-.App-header {
-  background-color: #282c34;
+/* Main Container */
+.container {
+  font-family: "Lobster", cursive;
+  width: 100%;
   min-height: 100vh;
+  position: relative;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 30px;
+  color: rgb(36, 30, 30);
+}
+.hvr-underline-from-center {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  overflow: hidden;
+}
+.hvr-underline-from-center:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 51%;
+  right: 51%;
+  bottom: 0;
+  background: #5d0137;
+  height: 3px;
+  -webkit-transition-property: left, right;
+  transition-property: left, right;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-underline-from-center:hover:before,
+.hvr-underline-from-center:focus:before,
+.hvr-underline-from-center:active:before {
+  left: 0;
+  right: 0;
+}
+
+.nav-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  background: #ece4e4c5;
+  /* border-radius: 30px; */
+  flex-direction: row;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-bottom: 20px;
+  margin: 0.5rem;
+  box-shadow: 1px 1px 4px gray;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: black;
+  margin: 0 10px;
+  padding: 10px;
+  font-variant: small-caps;
+}
+
+.active {
+  text-decoration: none;
+  color: black;
+  border-bottom: 3px solid #6f2f40;
+  font-variant: small-caps;
+}
+
+.nav-cart {
+  height: 35px;
+  margin: 0;
+  padding: 0;
+}
+.product-container {
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-top: -45px;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+}
+
+.image-gallery {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.home-products {
+  margin: 14px 14px;
+}
+.card {
+  background-color: #ece4e4c5;
+  margin: 10px 10px;
+  box-shadow: 3px 3px 7px #363236;
+}
+.latest-designs {
+  font-size: 25px;
+  text-shadow: 1px 1px 2px #cab9b9;
+}
+.box {
+  text-shadow: 1px 1px 2px #cab9b9;
+}
+
+.latest-container {
+  margin: 15px;
+}
+
+.line {
+  display: inline-block;
+  width: 20%;
+}
+
+.about-us {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("./images/shoe-about.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 50vh;
+  border-radius: 20px;
+  box-shadow: 10px 10px 10px gray;
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-top: -45px;
+}
+.about-us-text {
+  margin-right: 20px;
+  margin-left: 20px;
+  /* margin-top: -45px; */
+  /* background: #ece4e4c5; */
+  font-size: 25px;
+  color: black;
+  font-family: "Rowdies", cursive;
+  height: 20vh;
+  display: contents;
+}
+.links {
+  margin-top: -45px;
+  margin-bottom: 30px;
+}
+.link {
+  color: rgb(32, 31, 31);
+  /* box-shadow: 10px 10px 10px gray; */
+  border: #0a0a0a;
+}
+
+.link:hover {
+  color: #5d0137;
+  border: 0.5px solid #5d0137;
+  transition: all 0.3s;
+}
+
+.shoe-container {
+  margin-top: 55px;
+}
+.cart-button {
+  margin: 8px;
+  padding-left: 70px;
+  padding-right: 70px;
+  padding-bottom: 5px;
+  border-radius: 20px;
+  border: 0.5px rgb(77, 77, 77) solid;
+  outline: none;
+  background: #efd2d2;
+  cursor: pointer;
+}
+
+.cart-button:hover {
+  background: #975f80;
+  box-shadow: 2px 5px #999;
   color: white;
 }
+.order-details {
+  font-family: "Yusei Magic", sans-serif;
+  background: #ece4e4c5;
+}
+.table-container {
+  margin: 30px;
+  margin-top: -45px;
+  /* border-radius: 20px; */
+  box-shadow: 10px 10px 10px gray;
+  background: #ece4e4c5;
+  border: 2px rgb(77, 77, 77) solid;
 
-.App-link {
-  color: #61dafb;
+}
+.add-icon {
+  margin-bottom: -7px;
+}
+.button-checkout {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 75px;
+  padding-left: 75px;
+  text-align: center;
+  background-color: #228B22;
+  color:white;
+
+  font-size: larger;
+  cursor: pointer;
+  font-weight: bold;
+}
+.button-checkout:hover {
+  margin:5px;
+  text-align: center;
+  background-color: #228B22;
+  border:bold;
+
+  font-size: larger;
+  cursor: pointer;
+  font-weight: bold;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.home-container{
+  margin-top:70px;
+}
+.quantity,.item-button{
+  width: 40px;
+}
+.item-button{
+  width: 20px;
 }
